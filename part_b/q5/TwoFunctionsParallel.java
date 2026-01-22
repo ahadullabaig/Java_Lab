@@ -15,6 +15,7 @@ class Prime extends Thread
             if(count == 2)
             {
                 System.out.println(i + " is a Prime number.");
+
                 try
                 {
                     Thread.sleep(500);
@@ -28,25 +29,23 @@ class Prime extends Thread
     }
 }
 
-class Even extends Thread
+class All extends Thread
 {
     public void run()
     {
-        System.out.println("Printing Numbers Divisible by 2, 4, and 6 Between 1 to 100:");
+        System.out.println("Printing All Numbers Between 100 to 200:");
 
-        for(int i=1; i<=100; i++)
+        for(int i=100; i<=200; i++)
         {
-            if(i%2 == 0 && i%4 == 0 && i%6 == 0)
+            System.out.println(i);
+
+            try
             {
-                System.out.println(i);
-                try
-                {
-                    Thread.sleep(500);
-                }
-                catch(InterruptedException e)
-                {
-                    System.out.println(e);
-                }
+                Thread.sleep(500);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e);
             }
         }
     }
@@ -57,10 +56,9 @@ public class TwoFunctionsParallel
     public static void main(String[]args)
     {
         Prime t1 = new Prime();
-        Even t2 = new Even();
+        All t2 = new All();
 
         t1.start();
         t2.start();
     }
 }
-
