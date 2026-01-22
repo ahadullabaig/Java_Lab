@@ -11,7 +11,7 @@ public class Employee
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("\nEnter ID: ");
+        System.out.print("Enter ID: ");
         id = sc.next();
 
         System.out.print("Enter Name: ");
@@ -24,25 +24,25 @@ public class Employee
         salary = sc.nextInt();
     }
 
-    public static void main(String[] args)
+    public static void main(String[]args)
     {
-        Employee[] employees = new Employee[3];
+        Employee employees[] = new Employee[3];
 
         for(int i=0; i<3; i++)
         {
             employees[i] = new Employee();
 
-            System.out.println("Enter details for Employee " + (i + 1) + ":");
+            System.out.println("\nEnter details for Employee " + (i + 1) + ":");
 
             employees[i].accept();
         }
 
         // Sort employees by salary in ascending order
-        for (int i = 0; i < employees.length - 1; i++)
+        for(int i=0; i < (employees.length - 1); i++)
         {
-            for (int j = 0; j < employees.length - 1 - i; j++)
+            for(int j=0; j < (employees.length - 1 - i); j++)
             {
-                if (employees[j].salary > employees[j + 1].salary)
+                if(employees[j].salary > employees[j + 1].salary)
                 {
                     Employee temp = employees[j];
                     employees[j] = employees[j + 1];
